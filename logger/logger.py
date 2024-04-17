@@ -1,6 +1,5 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
-import os
 
 class Logger:
     def __init__(self, logger_name, log_file, format:logging.Formatter=None) -> None:
