@@ -29,7 +29,3 @@ class Logger:
         self.logger.info(message)
     def error(self, message):
         self.logger.error(message)
-
-if __name__ == "__main__":
-    logger = Logger('admin', './run.log')
-    logger.error('this is an error message')

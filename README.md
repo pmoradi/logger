@@ -1,5 +1,8 @@
 To install
-```pip install <logger's git address>```
+
+```
+pip install <logger's git address>
+```
 
 To use
 ```
