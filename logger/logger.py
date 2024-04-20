@@ -3,6 +3,10 @@ from logging.handlers import TimedRotatingFileHandler
 
 class Logger:
     def __init__(self, logger_name, log_file, format:logging.Formatter=None) -> None:
+        if self.get_logger(logger_name):
+            self.logger = self.get_logger(logger_name)
+            return
+        
         logger = logging.getLogger(logger_name)
         logger.setLevel(logging.DEBUG)
 
@@ -27,3 +31,9 @@ class Logger:
         self.logger.info(message)
     def error(self, message):
         self.logger.error(message)
+
+    def get_logger(self, logger_name):
+        if logger_name in logging.Logger.manager.loggerDict:
+            logger_instance = logging.getLogger(logger_name)
+            return logger_instance
+        return None
