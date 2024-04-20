@@ -7,8 +7,7 @@ class Logger:
         logger.setLevel(logging.DEBUG)
 
         # Create a timed rotating file handler
-        file_handler = TimedRotatingFileHandler(log_file, when='midnight', interval=1, backupCount=30, atTime=datetime.time(0, 0), encoding='utf-8', delay=False, utc=False, suffix='%Y-%m-%d.log')
-        # Set the logging level
+        file_handler = TimedRotatingFileHandler(log_file, when='midnight', interval=1, backupCount=30)        # Set the logging level
         file_handler.setLevel(logging.DEBUG)
 
         # Create a formatter
