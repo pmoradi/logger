@@ -30,5 +30,11 @@ class Logger:
 
         self.logger.addHandler(file_handler)
 
-    def get_logger(self):
-        return self.logger
+def get_logger(name):
+    logger_dict = logging.Logger.manager.loggerDict
+    logger_names = logger_dict.keys()
+    registered_names = list(logger_names)
+    if name in registered_names:
+        return logging.getLogger(name)
+    else:
+        raise Exception("The given logger's name has not been registered.")
